@@ -18,7 +18,7 @@ _Provide a list of your application's main screens. For each, optionally link to
 - **Detail Screen**: ![Detail Screen](path/to/detail-screen.png)
 - **Settings/Profile**:
 
-<small>(Replace the example image links above with your actual wireframe image paths or URLs.)</small>
+<small>(Replace the example links and images above with your actual wireframe image paths or URLs.)</small>
 
 ---
 

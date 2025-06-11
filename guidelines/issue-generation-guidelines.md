@@ -68,8 +68,8 @@ When generating issues, always use and reference:
 (Short, descriptive title for the feature or user stories.)
 
 ### User Stories Covered
-- #3: [User story text]
-- #4: [User story text]
+- US-003: [User story text]
+- US-004: [User story text]
 _Refer to `user-stories.md`_
 
 ### Requirements & Supporting Docs

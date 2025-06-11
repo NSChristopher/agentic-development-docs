@@ -8,8 +8,8 @@ _What is the short, descriptive title for this issue or feature?_
 ## User Stories Covered
 _Which user stories does this issue address? List by number and copy their text from user-stories-template.md._
 
-- As a customer, I want to see my past orders so I can remember what I bought.  
-- As a customer, I want to view the details of a specific order.  
+- US-001: As a customer, I want to see my past orders so I can remember what I bought.  
+- US-005: As a customer, I want to view the details of a specific order.  
   <small>(Examples only. Replace with your actual user stories.)</small>
 
 _See `user-stories-template.md`, stories #3 and #4._
