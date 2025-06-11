@@ -25,7 +25,7 @@ When generating issues, always use and reference:
 
 ## 3. Include All Relevant Context
 
-- **User Stories:** List the story numbers and text from `user-stories.md` that this issue addresses.
+- **User Stories:** List the story text from `user-stories.md` that this issue addresses.
 - **Requirements:** Reference the section(s) of `requirements.md` most relevant to the work.
 - **Wireframes:** Link or describe the corresponding parts of `ui-wireframes.md`.
 - **Schema:** Specify the entities or fields from `database-schema.md` involved.
@@ -56,7 +56,6 @@ When generating issues, always use and reference:
 
 ## 7. Clarity and Readability
 
-- Use headings, bullet points, and numbered lists for organization.
 - Be concise but specific.
 - Always link to or quote sections from supporting docs, not just mention them.
 
