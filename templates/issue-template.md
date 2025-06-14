@@ -12,7 +12,7 @@ _Which user stories does this issue address? List by number and copy their text 
 - US-005: As a customer, I want to view the details of a specific order.  
   <small>(Examples only. Replace with your actual user stories.)</small>
 
-_See `user-stories-template.md`, stories #3 and #4._
+_See `user-stories-template.md`._
 
 ---
 
