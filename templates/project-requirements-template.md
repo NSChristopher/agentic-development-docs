@@ -13,6 +13,9 @@ _List all contributors working on the project._
 ## 3. Project Overview  
 _A short overview (2-3 sentences) describing what your app or project will do._
 
+Our app helps restaurant customers like Jane quickly find, order, and reorder their favorite meals. By providing a personalized dashboard, order history, and easy reordering, we aim to streamline the dining experience and increase customer retention.
+<small>(Example only; replace with your actual project overview.)</small>
+
 ---
 
 ## 4. Problem Statement  

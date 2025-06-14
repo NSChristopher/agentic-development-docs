@@ -25,35 +25,13 @@ erDiagram
 
 ---
 
-## Entities
+## Description
 
-### User
-- **id**: int, auto-increment  
-  <small>(Primary key, unique identifier. Example only.)</small>
-- **name**: string  
-  <small>(Name of the user. Example only.)</small>
-- **email**: string  
-  <small>(Email address, must be unique. Example only.)</small>
+_Describe the main entities, their relationships, how they interact, and why they fit into the big picture. describe in natural language_
 
-### Order
-- **id**: int  
-  <small>(Primary key. Example only.)</small>
-- **user_id**: int  
-  <small>(Foreign key, relates to User. Example only.)</small>
-- **total**: float  
-  <small>(Order total amount. Example only.)</small>
-- **status**: string  
-  <small>(Status of the order, e.g., "pending", "completed". Example only.)</small>
+Imagine a scenario where a user, Jane, places multiple orders over several months. Each order is linked to her user profile, allowing the system to show her a personalized order history. This enables features like "Reorder" and targeted promotions. The relationship between USER and ORDER is essential for these user-centric experiences.
 
-<small>(Example entities. Replace or expand as needed for your project.)</small>
-
----
-
-## Relationships
-
-- One **user** can place many **orders**.  
-- Each **order** belongs to a single **user**.  
-  <small>(Examples only. Adjust for your project.)</small>
+<small>(Example description. Replace or expand as needed for your project.)</small>
 
 ---
 

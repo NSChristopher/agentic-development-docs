@@ -10,8 +10,8 @@ _Which issues are being addressed? List below. (Replace example rows with your a
 
 | Issue # | Title                       | User Stories Covered     | Assignee(s) | Status      | Dependencies        |
 |---------|-----------------------------|-------------------------|-------------|-------------|---------------------|
-| #15     | Orders: History & Details   | #3, #4                  | Alice       | In Progress | #10, #12           |
-| #18     | Profile Editing             | #5, #6                  | Bob         | To Do       | #12                |
+| #15     | Orders: History & Details   | US-003, US-004          | Alice       | In Progress | #10, #12           |
+| #18     | Profile Editing             | US-005, US-006          | Bob         | To Do       | #12                |
 | ...     | ...                         | ...                     | ...         | ...         | ...                |
 <small>(Rows above are examples. Replace with your sprint's issues.)</small>
 
@@ -43,4 +43,4 @@ _Reflect on the sprint: what went well, what could be improved, and actions for 
 
 ---
 
-> **Note:** Issues in the sprint are mapped to user stories, not the raw stories themselves. Some issues may cover multiple related user stories if grouped logically.
+> **Note:** Issues in the sprint are mapped to user stories using the US-XXX convention (e.g., US-003), not just numbers. Some issues may cover multiple related user stories if grouped logically.
