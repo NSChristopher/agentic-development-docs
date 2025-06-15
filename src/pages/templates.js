@@ -12,6 +12,13 @@ const templates = [
     path: '/docs/templates/issue-template'
   },
   {
+    id: 'enhanced-issue-template',
+    title: 'Enhanced Issue Template',
+    description: 'Advanced template with user story relationships',
+    tags: ['template', 'issue', 'agile', 'relationships'],
+    path: '/docs/templates/enhanced-issue-template'
+  },
+  {
     id: 'user-stories-template',
     title: 'User Stories Template',
     description: 'Template for writing clear, actionable user stories',
@@ -19,11 +26,25 @@ const templates = [
     path: '/docs/templates/user-stories-template'
   },
   {
+    id: 'user-story-template',
+    title: 'Individual User Story Template',
+    description: 'Template for creating modular, individual user stories',
+    tags: ['template', 'user-story', 'agile', 'modular'],
+    path: '/docs/templates/user-story-template'
+  },
+  {
     id: 'sprint-0-template',
     title: 'Sprint Template',
     description: 'Template for organizing sprint planning and tracking',
     tags: ['template', 'sprint', 'planning', 'agile'],
     path: '/docs/templates/sprint-0-template'
+  },
+  {
+    id: 'enhanced-sprint-template',
+    title: 'Enhanced Sprint Template',
+    description: 'Advanced sprint template with relationships and tracking',
+    tags: ['template', 'sprint', 'planning', 'agile', 'relationships'],
+    path: '/docs/templates/enhanced-sprint-template'
   },
   {
     id: 'project-requirements-template',

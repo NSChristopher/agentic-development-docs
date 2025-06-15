@@ -69,3 +69,123 @@ collections:
       - {label: "Type", name: "type", widget: "select", options: ["template", "example", "boilerplate"], default: "template"}
       - {label: "Sprint", name: "sprint", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "user-stories"
+    label: "User Stories"
+    folder: "docs/user-stories"
+    create: true
+    slug: "US-{{fields.story_id}}-{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Story ID", name: "story_id", widget: "string", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "User Role", name: "user_role", widget: "string", default: "user"}
+      - {label: "User Goal", name: "user_goal", widget: "text"}
+      - {label: "User Benefit", name: "user_benefit", widget: "text"}
+      - {label: "Priority", name: "priority", widget: "select", options: ["high", "medium", "low"], default: "medium"}
+      - {label: "Story Points", name: "story_points", widget: "number", required: false}
+      - {label: "Epic", name: "epic", widget: "string", required: false}
+      - {label: "Status", name: "status", widget: "select", options: ["draft", "ready", "in-progress", "done"], default: "draft"}
+      - {label: "Acceptance Criteria", name: "acceptance_criteria", widget: "list", field: {label: "Criterion", name: "criterion", widget: "string"}}
+      - {label: "Tags", name: "tags", widget: "list", default: ["user-story"]}
+      - {label: "Sprint", name: "sprint", widget: "string", required: false}
+      - {label: "Notes", name: "body", widget: "markdown", required: false}
+
+  - name: "issues"
+    label: "Issues"
+    folder: "docs/issues"
+    create: true
+    slug: "issue-{{fields.issue_id}}-{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Issue ID", name: "issue_id", widget: "string", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Type", name: "type", widget: "select", options: ["feature", "bug", "enhancement", "task"], default: "feature"}
+      - {label: "Priority", name: "priority", widget: "select", options: ["critical", "high", "medium", "low"], default: "medium"}
+      - {label: "Status", name: "status", widget: "select", options: ["open", "in-progress", "review", "closed"], default: "open"}
+      - {label: "Assignee", name: "assignee", widget: "string", required: false}
+      - {label: "User Stories", name: "user_stories", widget: "list", field: {label: "Story ID", name: "story", widget: "string", hint: "Reference user story ID (e.g., US-001)"}}
+      - {label: "Dependencies", name: "dependencies", widget: "list", field: {label: "Dependency", name: "dependency", widget: "string", hint: "Reference issue ID or external dependency"}}
+      - {label: "Sprint", name: "sprint", widget: "string", required: false}
+      - {label: "Story Points", name: "story_points", widget: "number", required: false}
+      - {label: "Tags", name: "tags", widget: "list", default: ["issue"]}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "sprints"
+    label: "Sprints"
+    folder: "docs/sprints"
+    create: true
+    slug: "sprint-{{fields.sprint_number}}-{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Sprint Number", name: "sprint_number", widget: "number", min: 0}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Start Date", name: "start_date", widget: "date"}
+      - {label: "End Date", name: "end_date", widget: "date"}
+      - {label: "Sprint Goal", name: "sprint_goal", widget: "text"}
+      - {label: "Status", name: "status", widget: "select", options: ["planning", "active", "completed", "cancelled"], default: "planning"}
+      - {label: "Issues", name: "issues", widget: "list", field: {label: "Issue ID", name: "issue", widget: "string", hint: "Reference issue ID (e.g., issue-001)"}}
+      - {label: "User Stories", name: "user_stories", widget: "list", field: {label: "Story ID", name: "story", widget: "string", hint: "Reference user story ID (e.g., US-001)"}}
+      - {label: "Team Members", name: "team_members", widget: "list", field: {label: "Member", name: "member", widget: "string"}}
+      - {label: "Total Story Points", name: "total_story_points", widget: "number", required: false}
+      - {label: "Tags", name: "tags", widget: "list", default: ["sprint"]}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "project-requirements"
+    label: "Project Requirements"
+    folder: "docs/project-requirements"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Project Name", name: "project_name", widget: "string"}
+      - {label: "Version", name: "version", widget: "string", default: "1.0.0"}
+      - {label: "Status", name: "status", widget: "select", options: ["draft", "review", "approved", "archived"], default: "draft"}
+      - {label: "Stakeholders", name: "stakeholders", widget: "list", field: {label: "Stakeholder", name: "stakeholder", widget: "string"}}
+      - {label: "Success Criteria", name: "success_criteria", widget: "list", field: {label: "Criterion", name: "criterion", widget: "string"}}
+      - {label: "Out of Scope", name: "out_of_scope", widget: "list", field: {label: "Item", name: "item", widget: "string"}, required: false}
+      - {label: "Tags", name: "tags", widget: "list", default: ["requirements"]}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "database-schemas"
+    label: "Database Schemas"
+    folder: "docs/database-schemas"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Database Type", name: "database_type", widget: "select", options: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Other"], default: "PostgreSQL"}
+      - {label: "Version", name: "version", widget: "string", default: "1.0.0"}
+      - {label: "Status", name: "status", widget: "select", options: ["draft", "review", "approved", "implemented"], default: "draft"}
+      - {label: "Related User Stories", name: "related_stories", widget: "list", field: {label: "Story ID", name: "story", widget: "string", hint: "Reference user story ID (e.g., US-001)"}, required: false}
+      - {label: "Tags", name: "tags", widget: "list", default: ["database", "schema"]}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "ui-designs"
+    label: "UI Designs"
+    folder: "docs/ui-designs"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Design Type", name: "design_type", widget: "select", options: ["wireframe", "mockup", "prototype", "style-guide"], default: "wireframe"}
+      - {label: "Status", name: "status", widget: "select", options: ["draft", "review", "approved", "implemented"], default: "draft"}
+      - {label: "Related User Stories", name: "related_stories", widget: "list", field: {label: "Story ID", name: "story", widget: "string", hint: "Reference user story ID (e.g., US-001)"}, required: false}
+      - {label: "Design Files", name: "design_files", widget: "list", field: {label: "File", name: "file", widget: "image"}, required: false}
+      - {label: "Tags", name: "tags", widget: "list", default: ["ui", "design"]}
+      - {label: "Body", name: "body", widget: "markdown"}

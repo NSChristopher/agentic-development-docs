@@ -34,6 +34,58 @@
               {label: 'Sprint', name: 'sprint', widget: 'string', required: false},
               {label: 'Body', name: 'body', widget: 'markdown'}
             ]
+          },
+          {
+            name: 'user-stories',
+            label: 'User Stories',
+            folder: 'docs/user-stories',
+            create: true,
+            slug: 'US-{{fields.story_id}}-{{slug}}',
+            fields: [
+              {label: 'Story ID', name: 'story_id', widget: 'string'},
+              {label: 'Title', name: 'title', widget: 'string'},
+              {label: 'Description', name: 'description', widget: 'text'},
+              {label: 'User Role', name: 'user_role', widget: 'string', default: 'user'},
+              {label: 'User Goal', name: 'user_goal', widget: 'text'},
+              {label: 'User Benefit', name: 'user_benefit', widget: 'text'},
+              {label: 'Priority', name: 'priority', widget: 'select', options: ['high', 'medium', 'low'], default: 'medium'},
+              {label: 'Status', name: 'status', widget: 'select', options: ['draft', 'ready', 'in-progress', 'done'], default: 'draft'},
+              {label: 'Sprint', name: 'sprint', widget: 'string', required: false},
+              {label: 'Body', name: 'body', widget: 'markdown', required: false}
+            ]
+          },
+          {
+            name: 'issues',
+            label: 'Issues',
+            folder: 'docs/issues',
+            create: true,
+            slug: 'issue-{{fields.issue_id}}-{{slug}}',
+            fields: [
+              {label: 'Issue ID', name: 'issue_id', widget: 'string'},
+              {label: 'Title', name: 'title', widget: 'string'},
+              {label: 'Description', name: 'description', widget: 'text'},
+              {label: 'Type', name: 'type', widget: 'select', options: ['feature', 'bug', 'enhancement', 'task'], default: 'feature'},
+              {label: 'Priority', name: 'priority', widget: 'select', options: ['critical', 'high', 'medium', 'low'], default: 'medium'},
+              {label: 'Status', name: 'status', widget: 'select', options: ['open', 'in-progress', 'review', 'closed'], default: 'open'},
+              {label: 'Sprint', name: 'sprint', widget: 'string', required: false},
+              {label: 'Body', name: 'body', widget: 'markdown'}
+            ]
+          },
+          {
+            name: 'sprints',
+            label: 'Sprints',
+            folder: 'docs/sprints',
+            create: true,
+            slug: 'sprint-{{fields.sprint_number}}-{{slug}}',
+            fields: [
+              {label: 'Sprint Number', name: 'sprint_number', widget: 'number'},
+              {label: 'Title', name: 'title', widget: 'string'},
+              {label: 'Description', name: 'description', widget: 'text'},
+              {label: 'Start Date', name: 'start_date', widget: 'date'},
+              {label: 'End Date', name: 'end_date', widget: 'date'},
+              {label: 'Status', name: 'status', widget: 'select', options: ['planning', 'active', 'completed', 'cancelled'], default: 'planning'},
+              {label: 'Body', name: 'body', widget: 'markdown'}
+            ]
           }
         ]
       }

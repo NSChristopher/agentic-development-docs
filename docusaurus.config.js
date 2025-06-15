@@ -112,6 +112,7 @@ const config = {
             label: 'Templates',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/dashboard', label: 'Dashboard', position: 'left'},
           {
             href: 'https://github.com/NSChristopher/agentic-development-docs',
             label: 'GitHub',
@@ -151,6 +152,10 @@ const config = {
           {
             title: 'More',
             items: [
+              {
+                label: 'Dashboard',
+                to: '/dashboard',
+              },
               {
                 label: 'Template Browser',
                 to: '/templates',
