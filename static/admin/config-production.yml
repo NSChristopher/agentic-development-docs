@@ -1,0 +1,74 @@
+backend:
+  name: git-gateway
+  branch: main  # Use main branch for production
+
+# Remove local_backend for production
+# local_backend: true
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "docs"
+    label: "Documentation"
+    folder: "docs/docs"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["docs"]}
+      - {label: "Status", name: "status", widget: "select", options: ["active", "archived", "draft"], default: "active"}
+      - {label: "Type", name: "type", widget: "select", options: ["documentation", "guide", "reference"], default: "documentation"}
+      - {label: "Sprint", name: "sprint", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "guidelines"
+    label: "Guidelines"
+    folder: "docs/guidelines"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["guidelines"]}
+      - {label: "Status", name: "status", widget: "select", options: ["active", "archived", "draft"], default: "active"}
+      - {label: "Type", name: "type", widget: "select", options: ["guideline", "standard", "policy"], default: "guideline"}
+      - {label: "Sprint", name: "sprint", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "planning"
+    label: "Planning"
+    folder: "docs/planning"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["planning"]}
+      - {label: "Status", name: "status", widget: "select", options: ["active", "archived", "draft"], default: "active"}
+      - {label: "Type", name: "type", widget: "select", options: ["planning", "sprint", "roadmap"], default: "planning"}
+      - {label: "Sprint", name: "sprint", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "templates"
+    label: "Templates"
+    folder: "docs/templates"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["template"]}
+      - {label: "Status", name: "status", widget: "select", options: ["active", "archived", "draft"], default: "active"}
+      - {label: "Type", name: "type", widget: "select", options: ["template", "example", "boilerplate"], default: "template"}
+      - {label: "Sprint", name: "sprint", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
