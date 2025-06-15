@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: NSChristopher/agentic-development-docs
   branch: main
+  auth_type: pkce
 
 media_folder: "static/img"
 public_folder: "/img"
