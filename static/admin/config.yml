@@ -76,7 +76,7 @@ collections:
     format: "frontmatter"
     extension: "md"
     fields:
-      - {label: "Story ID", name: "story_id", widget: "string", hint: "Enter a 3-digit number (e.g., 001, 002, 003)", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
+      - {label: "Story ID", name: "story_id", widget: "string", hint: "Enter a 3-digit number (e.g., 001, 002, 003). Use /id-tracker page to find next available ID.", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Priority", name: "priority", widget: "select", options: ["high", "medium", "low"], default: "medium"}
       - {label: "Status", name: "status", widget: "select", options: ["draft", "ready", "in-progress", "done"], default: "draft"}
@@ -91,7 +91,7 @@ collections:
     format: "frontmatter"
     extension: "md"
     fields:
-      - {label: "Issue ID", name: "issue_id", widget: "string", hint: "Enter a 3-digit number (e.g., 001, 002, 003)", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
+      - {label: "Issue ID", name: "issue_id", widget: "string", hint: "Enter a 3-digit number (e.g., 001, 002, 003). Use /id-tracker page to find next available ID.", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Type", name: "type", widget: "select", options: ["feature", "bug", "enhancement", "task"], default: "feature"}
       - {label: "Priority", name: "priority", widget: "select", options: ["critical", "high", "medium", "low"], default: "medium"}

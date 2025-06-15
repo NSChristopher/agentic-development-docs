@@ -111,6 +111,7 @@ const config = {
             position: 'left',
             label: 'Templates',
           },
+          {to: '/id-tracker', label: 'ID Helper', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/NSChristopher/agentic-development-docs',
