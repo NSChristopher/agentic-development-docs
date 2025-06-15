@@ -1,6 +1,6 @@
 ---
 title: Using the Documentation System
-description: Guide for contributors on how to use Docusaurus + Netlify CMS
+description: Guide for contributors on how to use Docusaurus + Decap CMS
 tags: [docs, guide, cms, docusaurus]
 status: active
 type: documentation
@@ -8,7 +8,7 @@ type: documentation
 
 # Using the Documentation System
 
-This documentation system combines **Docusaurus** for site generation with **Netlify CMS** for easy content management. Here's how to use it effectively.
+This documentation system combines **Docusaurus** for site generation with **Decap CMS** (formerly Netlify CMS) for easy content management. Here's how to use it effectively.
 
 ## Overview
 
@@ -19,8 +19,8 @@ Docusaurus generates the static website you're viewing now from Markdown files. 
 - Built-in blog functionality
 - Tag-based organization
 
-### What is Netlify CMS?
-Netlify CMS provides a user-friendly interface for editing content without touching code directly. It offers:
+### What is Decap CMS?
+Decap CMS (formerly Netlify CMS) provides a user-friendly interface for editing content without touching code directly. It offers:
 - Browser-based editing
 - Markdown preview
 - Metadata management
@@ -181,5 +181,5 @@ The system can be deployed to various hosting platforms including GitHub Pages, 
 
 - Check existing documentation in this system
 - Review Docusaurus documentation at [docusaurus.io](https://docusaurus.io)
-- Consult Netlify CMS docs at [netlifycms.org](https://www.netlifycms.org)
+- Consult Decap CMS docs at [decapcms.org](https://decapcms.org/docs/)
 - Create an issue in the repository for system-specific problems

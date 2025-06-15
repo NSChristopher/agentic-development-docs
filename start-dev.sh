@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Start development servers for Docusaurus + Netlify CMS
+# Start development servers for Docusaurus + Decap CMS
 echo "Starting Agentic Development Docs with CMS..."
 echo "=========================================="
 

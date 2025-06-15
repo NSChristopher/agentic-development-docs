@@ -1,22 +1,6 @@
 # Agentic Development Docs
 
-Modern documentation management system using **Docusaurus** + **Netlify CMS** for agile and AI-assisted development workflows.
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 16+ 
-- npm
-
-### Installation
-
-```bash
-npm install
-```
-
-# Agentic Development Docs
-
-Modern documentation management system using **Docusaurus** + **Netlify CMS** for agile and AI-assisted development workflows.
+Modern documentation management system using **Docusaurus** + **Decap CMS** (formerly Netlify CMS) for agile and AI-assisted development workflows.
 
 ## 🚀 Quick Start
 
@@ -30,6 +14,16 @@ Modern documentation management system using **Docusaurus** + **Netlify CMS** fo
 npm install
 ```
 
+### Verification
+
+To verify your setup is properly configured:
+
+```bash
+./verify-setup.sh
+```
+
+This script checks all dependencies, configuration files, and scripts to ensure everything is ready to run.
+
 ### Development
 
 #### Option 1: Full Development Environment (Recommended)
@@ -38,7 +32,13 @@ npm install
 ./start-dev.sh
 ```
 
-#### Option 2: Manual Setup
+#### Option 2: Using npm script
+```bash
+# Start both services with one command
+npm run start-with-cms
+```
+
+#### Option 3: Manual Setup
 ```bash
 # Terminal 1: Start CMS proxy server
 npm run cms-proxy
@@ -75,7 +75,7 @@ npm run serve
 ## 📚 Features
 
 - **Organized Documentation**: Clear structure for docs, guidelines, planning, and templates
-- **Content Management**: Browser-based editing with Netlify CMS
+- **Content Management**: Browser-based editing with Decap CMS
 - **Tag-based Organization**: Filter and discover content by tags
 - **Template Browser**: Dedicated interface for finding and copying templates
 - **Sprint Integration**: Built-in support for agile sprint planning
@@ -94,7 +94,7 @@ npm run serve
 │   └── pages/
 │       └── templates.js # Custom template browser
 ├── static/
-│   └── admin/          # Netlify CMS configuration
+│   └── admin/          # Decap CMS configuration
 ├── blog/               # Blog posts and announcements
 └── docusaurus.config.js # Main configuration
 ```
@@ -138,7 +138,7 @@ Main configuration in `docusaurus.config.js`:
 - Navigation structure
 - Build settings
 
-### Netlify CMS
+### Decap CMS
 Configuration in `static/admin/config.yml`:
 - Content collections
 - Field definitions
@@ -146,11 +146,17 @@ Configuration in `static/admin/config.yml`:
 
 ## 🚢 Deployment
 
-The site can be deployed to:
-- **GitHub Pages**: Built-in support
-- **Netlify**: Direct integration with CMS
-- **Vercel**: Simple deployment
-- **Other static hosts**: Any CDN or static host
+### Netlify (Recommended)
+The site is configured for automatic deployment on Netlify:
+
+1. **Connect repository** to Netlify
+2. **Build settings**:
+   - Build command: `npm run build`
+   - Publish directory: `build`
+   - Node version: `18`
+3. **Enable Netlify Identity** in site settings
+4. **Enable Git Gateway** in Identity → Services
+5. **CMS admin** will be available at `yoursite.netlify.app/admin`
 
 ### GitHub Pages
 ```bash
@@ -175,7 +181,7 @@ Full documentation is available in the system itself:
 ## 🛠️ Tech Stack
 
 - **[Docusaurus](https://docusaurus.io/)**: Static site generator
-- **[Netlify CMS](https://www.netlifycms.org/)**: Content management
+- **[Decap CMS](https://decapcms.org/)**: Content management (formerly Netlify CMS)
 - **[React](https://reactjs.org/)**: UI components
 - **[Markdown](https://www.markdownguide.org/)**: Content format
 
@@ -187,5 +193,5 @@ This project is licensed under the MIT License - see the repository for details.
 
 - Check the built-in documentation
 - Review [Docusaurus docs](https://docusaurus.io/docs)
-- Consult [Netlify CMS docs](https://www.netlifycms.org/docs/)
+- Consult [Decap CMS docs](https://decapcms.org/docs/)
 - Create an issue in the repository

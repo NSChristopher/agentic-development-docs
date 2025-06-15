@@ -12,7 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "cms-proxy": "decap-server"
+    "start-with-cms": "concurrently \"npm run start\" \"npx decap-server\"",
+    "verify-setup": "./verify-setup.sh"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.1",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.8.1",
     "@docusaurus/types": "3.8.1",
+    "concurrently": "^8.2.0",
     "decap-server": "^3.0.0"
   },
   "browserslist": {

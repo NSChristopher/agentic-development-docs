@@ -1,7 +1,9 @@
 backend:
-  name: proxy
-  proxy_url: http://localhost:8081/api/v1
-  branch: copilot/fix-1
+  name: git-gateway
+  branch: main  # Use main branch for production
+
+# Remove local_backend for production
+# local_backend: true
 
 media_folder: "static/img"
 public_folder: "/img"
