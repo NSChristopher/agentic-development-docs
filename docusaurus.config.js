@@ -20,7 +20,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-actual-netlify-site.netlify.app',
+  url: 'https://endearing-chimera-5c0e1e.netlify.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For Netlify deployment, this should be '/'
   baseUrl: '/',
