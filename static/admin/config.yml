@@ -1,8 +1,8 @@
 backend:
   name: test-repo
 
-media_folder: static/img
-public_folder: /agentic-development-docs/img
+media_folder: "static/img"
+public_folder: "/agentic-development-docs/img"
 
 collections:
   - name: "docs"
