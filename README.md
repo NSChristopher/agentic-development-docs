@@ -14,33 +14,63 @@ Modern documentation management system using **Docusaurus** + **Netlify CMS** fo
 npm install
 ```
 
-### Development
+# Agentic Development Docs
+
+Modern documentation management system using **Docusaurus** + **Netlify CMS** for agile and AI-assisted development workflows.
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- npm
+
+### Installation
 
 ```bash
+npm install
+```
+
+### Development
+
+#### Option 1: Full Development Environment (Recommended)
+```bash
+# Start both Docusaurus and CMS proxy server
+./start-dev.sh
+```
+
+#### Option 2: Manual Setup
+```bash
+# Terminal 1: Start CMS proxy server
+npm run cms-proxy
+
+# Terminal 2: Start Docusaurus dev server  
 npm start
 ```
 
-Runs the development server at `http://localhost:3000/agentic-development-docs/`
+### Access URLs
+- **Main Site**: http://localhost:3000/agentic-development-docs/
+- **CMS Admin**: http://localhost:3000/agentic-development-docs/admin/
 
-### Content Management
+## 📝 Content Management
 
-Visit `http://localhost:3000/admin/` to access the Netlify CMS interface for editing content.
+The CMS provides browser-based editing for:
+- 📚 **Documentation** - Core guides and references
+- 📋 **Guidelines** - Development standards and processes  
+- 📅 **Planning** - Sprint and project planning docs
+- 📄 **Templates** - Reusable content templates
 
-### Build
+All content supports:
+- ✅ Status tracking (active/archived/draft)
+- 🏷️ Tag-based organization
+- 📋 Sprint assignment
+- 🔄 Version control via Git
+
+## 🏗️ Production Build
 
 ```bash
 npm run build
-```
-
-Generates static files in the `build` directory.
-
-### Serve Built Site
-
-```bash
 npm run serve
 ```
-
-Serves the built site locally for testing.
 
 ## 📚 Features
 
