@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import { useEffect } from 'react';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -35,6 +36,14 @@ function HomepageHeader() {
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
+  
+  useEffect(() => {
+    // Redirect Netlify Identity auth tokens to admin page
+    const currentHash = window.location.hash;
+    if (currentHash.includes("_token")) {
+      window.location.href = "/admin/" + currentHash;
+    }
+  }, []);
 
   return (
     <Layout
