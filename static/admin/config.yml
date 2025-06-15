@@ -39,7 +39,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "planning"
-    label: "Planning"
+    label: "Planning Documents"
     folder: "docs/planning"
     create: true
     slug: "{{slug}}"
@@ -50,8 +50,6 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Tags", name: "tags", widget: "list", default: ["planning"]}
       - {label: "Status", name: "status", widget: "select", options: ["active", "archived", "draft"], default: "active"}
-      - {label: "Type", name: "type", widget: "select", options: ["planning", "sprint", "roadmap"], default: "planning"}
-      - {label: "Sprint", name: "sprint", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "templates"
@@ -72,120 +70,50 @@ collections:
 
   - name: "user-stories"
     label: "User Stories"
-    folder: "docs/user-stories"
+    folder: "docs/planning/user-stories"
     create: true
-    slug: "US-{{fields.story_id}}-{{slug}}"
+    slug: "US-{{fields.story_id}}"
     format: "frontmatter"
     extension: "md"
     fields:
-      - {label: "Story ID", name: "story_id", widget: "string", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
+      - {label: "Story ID", name: "story_id", widget: "string", hint: "Enter a 3-digit number (e.g., 001, 002, 003)", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "User Role", name: "user_role", widget: "string", default: "user"}
-      - {label: "User Goal", name: "user_goal", widget: "text"}
-      - {label: "User Benefit", name: "user_benefit", widget: "text"}
       - {label: "Priority", name: "priority", widget: "select", options: ["high", "medium", "low"], default: "medium"}
-      - {label: "Story Points", name: "story_points", widget: "number", required: false}
-      - {label: "Epic", name: "epic", widget: "string", required: false}
       - {label: "Status", name: "status", widget: "select", options: ["draft", "ready", "in-progress", "done"], default: "draft"}
-      - {label: "Acceptance Criteria", name: "acceptance_criteria", widget: "list", field: {label: "Criterion", name: "criterion", widget: "string"}}
       - {label: "Tags", name: "tags", widget: "list", default: ["user-story"]}
-      - {label: "Sprint", name: "sprint", widget: "string", required: false}
-      - {label: "Notes", name: "body", widget: "markdown", required: false}
+      - {label: "Body", name: "body", widget: "markdown", default: "# User Story Template\n\nUse this template to create individual, modular user stories for your project.\n\n## Story Format\n\n**As a** [user role]  \n**I want** [goal/desire]  \n**So that** [benefit/value]\n\n## Example\n\n**As a** customer  \n**I want** to view my order history  \n**So that** I can track my purchases and reorder items easily\n\n## Acceptance Criteria\n\n- [ ] Given [context], when [action], then [result]\n- [ ] The feature must handle [edge case]\n- [ ] The UI must display [specific elements]\n\n## Best Practices\n\n1. **Keep stories small** - Each story should be completable in a sprint\n2. **Focus on user value** - Always explain the \"why\"\n3. **Make it testable** - Acceptance criteria should be verifiable\n4. **Independent** - Stories should not depend heavily on other stories\n5. **Negotiable** - Details can be discussed and refined"}
 
   - name: "issues"
     label: "Issues"
-    folder: "docs/issues"
+    folder: "docs/planning/issues"
     create: true
-    slug: "issue-{{fields.issue_id}}-{{slug}}"
+    slug: "issue-{{fields.issue_id}}"
     format: "frontmatter"
     extension: "md"
     fields:
-      - {label: "Issue ID", name: "issue_id", widget: "string", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
+      - {label: "Issue ID", name: "issue_id", widget: "string", hint: "Enter a 3-digit number (e.g., 001, 002, 003)", pattern: ["^\\d{3}$", "Must be a 3-digit number (e.g., 001)"]}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
       - {label: "Type", name: "type", widget: "select", options: ["feature", "bug", "enhancement", "task"], default: "feature"}
       - {label: "Priority", name: "priority", widget: "select", options: ["critical", "high", "medium", "low"], default: "medium"}
       - {label: "Status", name: "status", widget: "select", options: ["open", "in-progress", "review", "closed"], default: "open"}
-      - {label: "Assignee", name: "assignee", widget: "string", required: false}
-      - {label: "User Stories", name: "user_stories", widget: "list", field: {label: "Story ID", name: "story", widget: "string", hint: "Reference user story ID (e.g., US-001)"}}
-      - {label: "Dependencies", name: "dependencies", widget: "list", field: {label: "Dependency", name: "dependency", widget: "string", hint: "Reference issue ID or external dependency"}}
-      - {label: "Sprint", name: "sprint", widget: "string", required: false}
-      - {label: "Story Points", name: "story_points", widget: "number", required: false}
       - {label: "Tags", name: "tags", widget: "list", default: ["issue"]}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", default: "# Issue Template\n\n## Title\n_What is the short, descriptive title for this issue or feature?_\n\n### Description\n_Describe the feature or issue in detail._\n\n**Narrative Example:**\nJane is a frequent customer who often forgets what she ordered last time. When she logs in, she should see a list of her previous orders, each with details and a \"Reorder\" button. This will help her quickly repeat past purchases, improving her experience and increasing sales.\n\n---\n\n## User Stories Covered\n_Which user stories does this issue address? List by number and copy their text from user-stories._\n\n- US-001: As a customer, I want to see my past orders so I can remember what I bought.\n- US-005: As a customer, I want to view the details of a specific order.\n\n---\n\n## Requirements & Supporting Documents\n_Which documents or sections support this issue?_\n- project-requirements.md, section [relevant section or heading]\n- ui-wireframes.md, wireframes [1 & 2] for layouts and flow\n- database-schema.md, entities: Order, User\n- api.md, endpoints: `/orders`, `/orders/{id}`\n\n---\n\n## Acceptance Criteria\n_What must be true for this issue to be considered complete?_\n- [ ] All user stories listed above are fully implemented and testable.\n- [ ] UI matches provided wireframes.\n- [ ] Data is loaded from the backend, using schema and API contracts as specified.\n- [ ] Handles loading, error, and empty states gracefully.\n- [ ] (Add any additional, specific criteria relevant to this feature.)\n\n---\n\n## Dependencies\n_What other issues or features must be completed first?_\n- Depends on:\n  - US-008: User authentication\n  - US-010: Order API backend available\n\n---\n\n## Stubbing & Mocks\n_If dependencies are not ready, what stubs or mock data can be used to proceed? use documentation as a contract_"}
 
   - name: "sprints"
     label: "Sprints"
-    folder: "docs/sprints"
+    folder: "docs/planning/sprints"
     create: true
-    slug: "sprint-{{fields.sprint_number}}-{{slug}}"
+    slug: "sprint-{{fields.sprint_number}}"
     format: "frontmatter"
     extension: "md"
     fields:
       - {label: "Sprint Number", name: "sprint_number", widget: "number", min: 0}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
       - {label: "Start Date", name: "start_date", widget: "date"}
       - {label: "End Date", name: "end_date", widget: "date"}
       - {label: "Sprint Goal", name: "sprint_goal", widget: "text"}
       - {label: "Status", name: "status", widget: "select", options: ["planning", "active", "completed", "cancelled"], default: "planning"}
-      - {label: "Issues", name: "issues", widget: "list", field: {label: "Issue ID", name: "issue", widget: "string", hint: "Reference issue ID (e.g., issue-001)"}}
-      - {label: "User Stories", name: "user_stories", widget: "list", field: {label: "Story ID", name: "story", widget: "string", hint: "Reference user story ID (e.g., US-001)"}}
-      - {label: "Team Members", name: "team_members", widget: "list", field: {label: "Member", name: "member", widget: "string"}}
-      - {label: "Total Story Points", name: "total_story_points", widget: "number", required: false}
       - {label: "Tags", name: "tags", widget: "list", default: ["sprint"]}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", default: "# Sprint [Number] Template — [Start Date] to [End Date]\n\n## Sprint Goal\n_What is the overall objective or theme for this sprint?_\n\n---\n\n## Issues in this Sprint\n_Which issues are being addressed? List below._\n\n| Issue # | Title                       | User Stories Covered     | Assignee(s) | Status      | Dependencies        |\n|---------|-----------------------------|-------------------------|-------------|-------------|-----------------|\n| #15     | Orders: History & Details   | US-003, US-004          | Alice       | In Progress | #10, #12           |\n| #18     | Profile Editing             | US-005, US-006          | Bob         | To Do       | #12                |\n| ...     | ...                         | ...                     | ...         | ...         | ...                |\n\n---\n\n## Key Documents\n_Reference any key documents for this sprint._\n\n- requirements.md (project vision)\n- user-stories.md (user needs)\n- issue-generation-guidelines.md\n\n---\n\n## Sprint Planning Notes\n_Why were these issues chosen? What is prioritized? Any anticipated blockers?_\n\n---\n\n## Retrospective (after sprint ends)\n_Reflect on the sprint: what went well, what could be improved, and actions for next sprint._\n\n- What went well:\n    - ...\n- What could be improved:\n    - ...\n- Actions for next sprint:\n    - ...\n\n---\n\n> **Note:** Issues in the sprint are mapped to user stories using the US-XXX convention (e.g., US-003), not just numbers. Some issues may cover multiple related user stories if grouped logically."}
 
-  - name: "project-requirements"
-    label: "Project Requirements"
-    folder: "docs/project-requirements"
-    create: true
-    slug: "{{slug}}"
-    format: "frontmatter"
-    extension: "md"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Project Name", name: "project_name", widget: "string"}
-      - {label: "Version", name: "version", widget: "string", default: "1.0.0"}
-      - {label: "Status", name: "status", widget: "select", options: ["draft", "review", "approved", "archived"], default: "draft"}
-      - {label: "Stakeholders", name: "stakeholders", widget: "list", field: {label: "Stakeholder", name: "stakeholder", widget: "string"}}
-      - {label: "Success Criteria", name: "success_criteria", widget: "list", field: {label: "Criterion", name: "criterion", widget: "string"}}
-      - {label: "Out of Scope", name: "out_of_scope", widget: "list", field: {label: "Item", name: "item", widget: "string"}, required: false}
-      - {label: "Tags", name: "tags", widget: "list", default: ["requirements"]}
-      - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "database-schemas"
-    label: "Database Schemas"
-    folder: "docs/database-schemas"
-    create: true
-    slug: "{{slug}}"
-    format: "frontmatter"
-    extension: "md"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Database Type", name: "database_type", widget: "select", options: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Other"], default: "PostgreSQL"}
-      - {label: "Version", name: "version", widget: "string", default: "1.0.0"}
-      - {label: "Status", name: "status", widget: "select", options: ["draft", "review", "approved", "implemented"], default: "draft"}
-      - {label: "Related User Stories", name: "related_stories", widget: "list", field: {label: "Story ID", name: "story", widget: "string", hint: "Reference user story ID (e.g., US-001)"}, required: false}
-      - {label: "Tags", name: "tags", widget: "list", default: ["database", "schema"]}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "ui-designs"
-    label: "UI Designs"
-    folder: "docs/ui-designs"
-    create: true
-    slug: "{{slug}}"
-    format: "frontmatter"
-    extension: "md"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Design Type", name: "design_type", widget: "select", options: ["wireframe", "mockup", "prototype", "style-guide"], default: "wireframe"}
-      - {label: "Status", name: "status", widget: "select", options: ["draft", "review", "approved", "implemented"], default: "draft"}
-      - {label: "Related User Stories", name: "related_stories", widget: "list", field: {label: "Story ID", name: "story", widget: "string", hint: "Reference user story ID (e.g., US-001)"}, required: false}
-      - {label: "Design Files", name: "design_files", widget: "list", field: {label: "File", name: "file", widget: "image"}, required: false}
-      - {label: "Tags", name: "tags", widget: "list", default: ["ui", "design"]}
-      - {label: "Body", name: "body", widget: "markdown"}

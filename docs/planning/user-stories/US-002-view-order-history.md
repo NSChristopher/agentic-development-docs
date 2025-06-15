@@ -1,31 +1,20 @@
 ---
 story_id: "002"
 title: "View Order History"
-description: "As a customer, I want to view my order history so that I can track my purchases"
-user_role: "customer"
-user_goal: "view my previous orders"
-user_benefit: "track my purchase history and reorder items easily"
 priority: "medium"
-story_points: 3
-epic: "Order Management"
 status: "ready"
-acceptance_criteria:
-  - "Given a logged-in customer, when they navigate to order history, then they should see a list of their orders"
-  - "Given order history, when displayed, then it should show order date, items, and total"
-  - "Given an order in the list, when clicked, then detailed order information should be displayed"
 tags: ["user-story", "orders", "history"]
-sprint: "sprint-1"
 ---
 
-# User Story: View Order History
+# User Story Template
+
+Use this template to create individual, modular user stories for your project.
+
+## Story Format
 
 **As a** customer  
 **I want** to view my previous orders  
 **So that** I can track my purchase history and reorder items easily
-
-## Description
-
-This story enables customers to view a comprehensive list of their past orders, including order details, dates, and status information.
 
 ## Acceptance Criteria
 

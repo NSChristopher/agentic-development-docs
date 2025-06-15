@@ -5,11 +5,11 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Handle Auth0 callbacks and email confirmation links
+# Handle CMS admin redirects
 [[redirects]]
-  from = "/.netlify/functions/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+  from = "/admin"
+  to = "/admin/"
+  status = 301
 
 [[redirects]]
   from = "/admin/*"
